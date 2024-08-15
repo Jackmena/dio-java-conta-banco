@@ -5,8 +5,10 @@ public class ContaTerminal {
     public static void main(String[] args) throws Exception {
 
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
-        
-        System.out.println("Por favor, digite sua agência:");
+
+        try {
+
+            System.out.println("Por favor, digite sua agência:");
         String agencia = scanner.next();
 
         System.out.println("Agora o número da sua conta:");
@@ -20,6 +22,11 @@ public class ContaTerminal {
 
         System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + 
         ", conta " + contaBanco + " e seu saldo de " + saldoConta + " já está disponível para saque.");
+            
+        } finally {
+            
+            scanner.close();
+        }
 
     }
 }
